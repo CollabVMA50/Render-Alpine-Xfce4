@@ -6,6 +6,8 @@ RUN apk update && apk upgrade && \
     echo "alpine:alpine" | chpasswd && \
     echo "alpine ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+COPY supervisord.conf /etc/supervisord.conf
+
 USER alpine
 ENV USER=alpine DISPLAY=:1 LANG=en_US.UTF-8
 
